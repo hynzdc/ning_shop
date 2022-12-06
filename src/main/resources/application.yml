@@ -1,0 +1,22 @@
+server:
+  port: 8981
+spring:
+  application:
+    name: PRODUCT
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+      discovery:
+        namespace: effc7b2e-c3d5-4134-815e-33af08dd3786
+        server-addr: ${spring.cloud.nacos.server-addr}
+  datasource:
+    url: jdbc:mysql://localhost:3306/uushop?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    password: 12160203
+    username: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.hyn.entity
