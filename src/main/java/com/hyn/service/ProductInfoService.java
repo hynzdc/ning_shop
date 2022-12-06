@@ -5,7 +5,18 @@
 package com.hyn.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.hyn.dto.resp.ProductCategoryRespDto;
 import com.hyn.entity.ProductInfo;
 
+import java.math.BigDecimal;
+import java.util.List;
+
 public interface ProductInfoService extends IService<ProductInfo> {
+    List<ProductCategoryRespDto> getAllProductCategoryList();
+
+    BigDecimal findPriceById(Integer productId);
+
+    ProductInfo findById(Integer productId);
+
+    Boolean subStockById(Integer id, Integer quantity);
 }
